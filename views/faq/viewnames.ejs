@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View-List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-info">
+        <h3><a class="btn btn-secondary" href="/faq"><i class="fa fa-plus"></i> Create New</a>FAQ </h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%names.foreach(function(ques,ans){%>
+                    <tr>
+                        <td><%this.ques%></td>
+                        <td><%this.ans%></td>
+                        <td>
+                            <a href="/faq/<%=this._id%>"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                            <a href="/faq/delete/<%=this._id%>" onclick="return confirm('Are you sure You Want to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                <%}%>
+            </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
